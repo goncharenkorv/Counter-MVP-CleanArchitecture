@@ -11,6 +11,7 @@ import android.util.SparseIntArray;
 import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.BindView;
 import gruv.apps.counter.R;
 import gruv.apps.counter.domain.Constants;
 import gruv.apps.counter.domain.executor.impl.ThreadExecutor;
@@ -19,7 +20,6 @@ import gruv.apps.counter.presentation.presenters.impl.MainPresenterImpl;
 import gruv.apps.counter.storage.DataValueRepository;
 import gruv.apps.counter.threading.MainThreadImpl;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -32,19 +32,16 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements MainPresenter.View {
 
     // текстовое поле со счетчиком:
-    @Bind(R.id.counterLabel)
-    //@BindView(R.id.counterLabel)
-            TextView mTextView;
+    @BindView(R.id.counterLabel)
+    TextView mTextView;
 
     // кнопка увеличения:
-    @Bind(R.id.incrementButton)
-    //@BindView(R.id.incrementButton)
-            Button incrementButton;
+    @BindView(R.id.incrementButton)
+    Button incrementButton;
 
     // кнопка уменьшения:
-    @Bind(R.id.decrementButton)
-    //@BindView(R.id.decrementButton)
-            Button decrementButton;
+    @BindView(R.id.decrementButton)
+    Button decrementButton;
 
     // Вибратор:
     private Vibrator vibrator;
